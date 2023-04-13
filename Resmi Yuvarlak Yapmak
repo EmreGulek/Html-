@@ -1,0 +1,32 @@
+Html Dökümanıma bir fotoğraf koyup onu yuvarlak hale getirmek istiyorum diyelim.
+
+Border-radius özelliği yuvarlak bir kenarlık oluşturmak için kullanılır.
+Border-radius:50%;  dikdörtgen halde olan img min kenarlarını yuvarlak hale getirerek img min yuvarlak olmasını sağlar.
+
+Bu yöntemi kullandıktan sonra görüntümün boyutlarına ve oran değerlerine bağlı olarak tam  yuvarlak bir hale gelmeyebilir.
+Bu durumda,
+           resmi kesmek ve istenilen boyuta getirmek için object-fit ve object-position özelliklerini kullanmalıyım.
+           
+img {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+Bu örnek kod ,
+              resmi 200 px genişlik ve 200 px yükseklikte gösterir ve resmin görüntülenecek sınır alanlarını belirler.
+              object-fit:cover; İFADESİ, RESMİN BOYUTLARINI BU ALANIN BOYUTLARINA UYACAK ŞEKİLDE OTOMATİK OLARAK AYARLAR.
+              object-position:center;  İFADESİ İSE RESMİN BU ALANIN ORTASINDA YER ALMASINI SAĞLAR.
+              
+  object-fit:     ;    Bir resmin boyutlarını nasıl ölçeklendirebilceğimizi belirlerken ,
+                    aynı zamanda resmin nasıl konumlandırılacağını da belirler.
+              
+    object-fit:cover;                               object-fit:fill; 
+       cover değeri kullanıldığında ise                         fill değeri kullanıldığında RESİM ORJİNAL BOYUTUNU KORUR.
+ resmin orantıları korunmaya çalışılarak                                                    BELİRTİLEN ALANIN TAMAMINI KAPLAYACAK ŞEKİLDE GENİŞLETİLİR.
+ gerekli alan doldurulmaya çalışılır.                                    BÖYLECE RESİM BELİRTİLEN ALANIN TAMAMINI KAPLARKEN ORANTILARI KORUNMAZ.
+ Belirtilen alanın tamamı doldurulamazsa
+ resim kırpılır.
